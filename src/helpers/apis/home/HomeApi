@@ -1,0 +1,203 @@
+import BaseUrl, { catchApiError } from "./../BaseUrl";
+
+export const GetWinLossData = async (page_no, date, userName, type) => {
+  try {
+    const res = await BaseUrl.get(
+      `/api/agent/playerBetRecords?page=${page_no}`,
+      {
+        params: {
+          startDate: date && date[0],
+          endDate: date && date[1],
+          username: userName,
+          game_vendor: type,
+        },
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token_gasv")}`,
+        },
+      }
+    );
+    if (res.status === 200 && res?.data) {
+      return res?.data;
+    }
+  } catch (e) {
+    catchApiError(e);
+  }
+};
+
+export const GetBetSummaryData = async (page_no, type, category) => {
+  try {
+    const res = await BaseUrl.get(
+      `/api/agent/playerBetSummary?page=${page_no}`,
+      {
+        params: {
+          // startDate: date && date[0],
+          // endDate: date && date[1],
+          // username: userName,
+          game_vendor: type,
+          category_id: category,
+        },
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token_gasv")}`,
+        },
+      }
+    );
+    if (res.status === 200 && res?.data) {
+      return res?.data;
+    }
+  } catch (e) {
+    catchApiError(e);
+  }
+};
+
+export const GetCategoryList = async () => {
+  try {
+    const res = await BaseUrl.get(`/api/agent/game_category`, {
+      params: {},
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token_gasv")}`,
+      },
+    });
+    if (res.status === 200 && res?.data) {
+      return res?.data;
+    }
+  } catch (e) {
+    catchApiError(e);
+  }
+};
+
+export const GetGameVendorList = async () => {
+  try {
+    const res = await BaseUrl.get(`/api/providers/list`, {
+      params: {},
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token_gasv")}`,
+      },
+    });
+    if (res.status === 200 && res?.data) {
+      return res?.data;
+    }
+  } catch (e) {
+    catchApiError(e);
+  }
+};
+
+export const GetStatsData = async (timestamp) => {
+  try {
+    const res = await BaseUrl.get(`/api/agent/getStatsData`, {
+      params: {
+        timestamp: timestamp,
+      },
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token_gasv")}`,
+      },
+    });
+    if (res.status === 200 && res?.data) {
+      return res?.data;
+    }
+  } catch (e) {
+    catchApiError(e);
+  }
+};
+
+export const GetAllStatsData = async () => {
+  try {
+    const res = await BaseUrl.get(`/api/agent/chart/allStatsChart`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token_gasv")}`,
+      },
+    });
+    if (res.status === 200 && res?.data) {
+      return res?.data;
+    }
+  } catch (e) {
+    catchApiError(e);
+  }
+};
+
+export const GetPlayersApi = async (page_no, date, name, phone) => {
+  try {
+    const res = await BaseUrl.get(`api/agent/playersList?page=${page_no}`, {
+      params: {
+        startDate: date && date[0],
+        endDate: date && date[1],
+        username: name,
+      },
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token_gasv")}`,
+        Accept: "application/json",
+      },
+    });
+    if (res.status === 200 && res?.data) {
+      return res?.data;
+    }
+  } catch (e) {
+    catchApiError(e);
+  }
+};
+
+export const GetTransactionsApi = async (page_no, date, userName, type) => {
+  try {
+    const res = await BaseUrl.get(
+      `/api/agent/playerTransactionList?page=${page_no}`,
+      {
+        params: {
+          startDate: date && date[0],
+          endDate: date && date[1],
+          username: userName,
+          type: type,
+        },
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token_gasv")}`,
+          Accept: "application/json",
+        },
+      }
+    );
+    if (res.status === 200 && res?.data) {
+      return res?.data;
+    }
+  } catch (e) {
+    catchApiError(e);
+  }
+};
+
+export const GetAgentListData = async (page_no, date, agenId) => {
+  try {
+    const res = await BaseUrl.get(`/api/agent/list?page=${page_no}`, {
+      params: {
+        start_date: date && date[0],
+        end_date: date && date[1],
+        agent_id: agenId,
+      },
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token_gasv")}`,
+      },
+    });
+    if (res.status === 200 && res?.data) {
+      return res?.data;
+    }
+  } catch (e) {
+    catchApiError(e);
+  }
+};
+
+export const GetProfitLossListData = async (page_no, type, userName) => {
+  try {
+    const res = await BaseUrl.get(
+      `/api/agent/playerProfitLoss?page=${page_no}`,
+      {
+        params: {
+          type: type,
+          username: userName,
+        },
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token_gasv")}`,
+        },
+      }
+    );
+    if (res.status === 200 && res?.data) {
+      return res;
+    }
+  } catch (e) {
+    catchApiError(e);
+  }
+};

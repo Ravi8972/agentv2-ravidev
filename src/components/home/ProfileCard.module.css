@@ -1,0 +1,9 @@
+.card {
+    background-color: var(--mantine-color-body);
+    /* background: rgb(33,82,115); */
+    /* background: linear-gradient(111deg, rgba(33,82,115,1) 0%, rgba(21,56,80,1) 100%); */
+  }
+  
+  .avatar {
+    border: rem(2px) solid var(--mantine-color-body);
+  }

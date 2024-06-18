@@ -1,0 +1,67 @@
+.titleLabelStyling {
+  text-align: left;
+  font-style: normal;
+  /* font-weight: bold; */
+  font-stretch: medium;
+  font-size: 16px;
+  line-height: 19px;
+  font-family: Roboto;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+
+.imgtextContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imgContainer {
+  max-width: 30px;
+  max-height: 30px;
+  width: 100%;
+  height: 100%;
+}
+
+.imgStyle {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  object-fit: contain;
+}
+
+.labelStyling {
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  font-family: Roboto;
+  letter-spacing: 0px;
+  color: #4f5057;
+  opacity: 1;
+}
+
+.tipsText {
+  text-align: left;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  font-family: Roboto;
+  letter-spacing: 0px;
+  color: #4f5057;
+  opacity: 1;
+}
+
+.allStatDetail {
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: medium;
+  font-size: 13px;
+  line-height: 15px;
+  font-family: Roboto;
+  letter-spacing: 0px;
+  color: #4f5057;
+  opacity: 1;
+}

@@ -1,0 +1,110 @@
+.mainTitleStyle {
+  text-align: left;
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: medium;
+  font-size: 20px;
+  line-height: 24px;
+  font-family: Roboto;
+  letter-spacing: 0px;
+  color: #153850;
+  opacity: 1;
+}
+
+.dateButton {
+  min-width: 130px;
+  height: 35px;
+  font-weight: 500;
+  border-radius: 6px;
+  font-size: 12px;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  cursor: pointer;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.dateButtonActive {
+  background-color: #7947e8;
+  color: #fff;
+  border: none;
+}
+
+.dateButtonActive:hover {
+  background-color: #5e37b3;
+}
+
+.dateButtonInactive {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #c7c7c7;
+}
+
+.dateButtonInactive:hover {
+  background-color: #f2f2f2;
+}
+
+.statCardTitle {
+  text-align: left;
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: medium;
+  font-size: 16px;
+  line-height: 19px;
+  font-family: Roboto;
+  letter-spacing: 0px;
+  color: #153850;
+  opacity: 1;
+}
+
+.statCardDetail {
+  text-align: left;
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: medium;
+  font-size: 24px;
+  line-height: 29px;
+  font-family: Roboto;
+  letter-spacing: 0px;
+  color: #153850;
+  opacity: 1;
+}
+
+.tableTitleStyle {
+  text-align: left;
+  font-style: normal;
+  font-weight: bold;
+  font-stretch: medium;
+  font-size: 22px;
+  line-height: 27px;
+  font-family: Roboto;
+  letter-spacing: 0px;
+  color: #153850;
+  opacity: 1;
+}
+
+.filterTitle {
+  text-align: left;
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: medium;
+  font-size: 18px;
+  line-height: 22px;
+  font-family: Roboto;
+  letter-spacing: 0px;
+  color: #153850;
+  opacity: 1;
+}
+
+.tableDetailsStyle {
+  color: #667085;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  opacity: 1;
+  text-align: left;
+}

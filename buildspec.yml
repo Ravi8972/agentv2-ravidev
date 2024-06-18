@@ -1,0 +1,23 @@
+version: 0.1
+
+phases:
+  install:
+    commands:
+      - npm install
+  pre_build:
+    commands:
+      - echo "Verifying that all necessary files are present..."
+      - if [ -d "src/Api" ]; then ls -l src/Api; else echo "Directory src/Api does not exist."; fi
+  build:
+    commands:
+      - npm run build
+      - echo "Checking if build directory exists and is not empty..."
+      - if [ -d "build" ] && [ "$(ls -A build)" ]; then echo "Moving contents of build directory"; mv build/* .; else echo "Build directory is empty or does not exist"; fi
+  post_build:
+    commands:
+      - rm -rf build # Clean up the now empty build directory if it exists
+artifacts:
+  files:
+    - '**/*'
+    - '!build/**/*' # Exclude the build directory itself, as it's now empty
+    - 'appspec.yml'
